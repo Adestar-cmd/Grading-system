@@ -1,0 +1,202 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #05060a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ===== ABSTRACT BACKGROUND ===== */
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(135deg, #00ffff, #ff00ff, #ffff00);
+    animation: move 12s linear infinite;
+}
+
+.line:nth-child(1) {
+    left: 20%;
+    animation-duration: 10s;
+}
+
+.line:nth-child(2) {
+    left: 40%;
+    animation-duration: 12s;
+}
+
+.line:nth-child(3) {
+    left: 60%;
+    animation-duration: 14s;
+}
+
+.line:nth-child(4) {
+    left: 85%;
+    animation-duration: 17s;
+}
+
+@keyframes move {
+    from {
+    transform: translateY(-100%);
+    }
+    to {
+    transform: translateY(0);
+    }
+}
+
+/* ===== MAIN CARD ===== */
+.card {
+    position: relative;
+    z-index: 2;
+    width: 420px;
+    padding: 36px;
+    background: rgba(10, 12, 20, 0.85);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 30px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* ===== TEXT ===== */
+h1 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    margin-bottom: 6px;
+    width: 30vw;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(30) infinite alternate-reverse;
+}
+@keyframes typing{
+    from{
+        width: 0ch;
+    }
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #7aa2ff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* ===== FORM ===== */
+label {
+    font-size: 13px;
+    color: #cfd6ff;
+    margin-bottom: 6px;
+    display: block;
+    font-weight: bolder;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    background: #0f1220;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== BUTTON ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    background-color: #8c00ff;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    
+}
+
+/* ===== RESULT ===== */
+.result {
+    margin-top: 26px;
+    padding: 12px;
+    border-radius: 14px;
+    background: #0b0e1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    animation: reveal 0.5s ease;
+}
+
+.result span {
+    color: whitesmoke;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+@keyframes reveal {
+    from {
+    opacity: 0;
+    transform: translateY(10px);
+    }
+    to {
+    opacity: 1;
+    transform: translateY(0);
+    }
+}
+.bg-float div {
+    position: absolute;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.06);
+    animation: floatUp 20s linear infinite;
+}
+
+.bg-float div:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bg-float div:nth-child(2) { left: 30%; animation-delay: 2s; }
+.bg-float div:nth-child(3) { left: 45%; animation-delay: 4s; }
+.bg-float div:nth-child(4) { left: 55%; animation-delay: 6s; }
+.bg-float div:nth-child(5) { left: 60%; animation-delay: 8s; }
+.bg-float div:nth-child(6) { left: 70%; animation-delay: 10s; }
+
+@keyframes floatUp {
+    from { top: 110%; }
+    to { top: -20%; }
+}
+
+
+/* Flash animation for grade and remark */
+.flash {
+    animation: flash 0.6s ease 0s 3; /* flash 3 times */
+}
+
+@keyframes flash {
+    0% { opacity: 1; }
+    25% { opacity: 0; }
+    50% { opacity: 1; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+

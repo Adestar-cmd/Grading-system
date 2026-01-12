@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Grading System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="background">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <!-- FLOATING ELEMENTS -->
+    <div class="bg-float">
+        <div>100</div>
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>F</div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+        <h1 style="text-align: center;">Academic Grading System</h1>
+        <p class="subtitle">Secondary • Polytechnic • University</p>
+
+        <label>Institution Type</label>
+        <select id="school">
+            <option value="">Select institution</option>
+            <option value="Secondary">Secondary School</option>
+            <option value="Polytechnic">Polytechnic / Monotechnic</option>
+            <option value="University">University</option>
+        </select>
+
+        <label>Student Score</label>
+        <input type="number" id="score" placeholder="Enter score (0 – 100)">
+
+        <button onclick="calculateGrade()">Evaluate Result</button>
+
+        <div class="result">
+            <p><span id="grade">Grade:</span></p>
+            <p><span id="remark">Remark:</span></p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
